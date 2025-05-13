@@ -13,7 +13,6 @@ const corsOptions = {
   origin: ["https://aliraa.vercel.app", "http://localhost:3000"],
 };
 
-
 // Middleware
 app.options('*', cors(corsOptions));
 app.use(express.json());
