@@ -10,11 +10,11 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ["https://aliraa.vercel.app", "http://localhost:3000"],
+  origin: "*",
 };
 
 // Middleware
-app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Configure OpenAI
