@@ -11,10 +11,8 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: ["https://aliraa.vercel.app", "http://localhost:3000"],
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
 };
+
 
 // Middleware
 app.use(cors(corsOptions));
