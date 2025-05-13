@@ -23,6 +23,15 @@ client = OpenAI(
     )
 )
 
+@app.route('/')
+def health_check():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'timestamp': datetime.now().isoformat(),
+        'service': 'social-media-post-generator'
+    })
+
 def generate_post_content(prompt, platform):
     """Generate post content using OpenAI with function calling"""
     try:
