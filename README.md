@@ -1,7 +1,6 @@
 # Social Media Post Generator API
 
-A Flask-based API that generates social media posts using OpenAI's GPT model.
-
+A Flask-based API that generates social media posts using OpenAI's GPT model
 ## Setup
 
 1. Clone the repository
