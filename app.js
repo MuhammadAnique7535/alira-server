@@ -49,7 +49,7 @@ async function generatePostContent(prompt, context = []) {
               type: "string",
               enum: ["post", "response"],
               description:
-                "Type of content: 'post' for social media posts, 'response' for other content. Make it post only if user provide details for real estate or any post content by make response if user asking questions",
+                "Type of content: 'post' only if user explicitly asks to generate/create a post. 'response' for all other cases including questions, general queries, or when post generation is not explicitly requested.",
             },
             platform: {
               type: "string",
@@ -60,14 +60,14 @@ async function generatePostContent(prompt, context = []) {
             caption: {
               type: "string",
               description:
-                "The main content of the post or response message do not add #hashtags in caption",
+                "The main content of the post or response message. For posts: Use proper formatting with line breaks, emojis, and bullet points. For real estate posts: Include property details, features, and call-to-action in a structured format. Do not include hashtags in the caption.",
             },
             hashtags: {
               type: "array",
               items: {
                 type: "string",
               },
-              description: "Array of hashtags for the post",
+              description: "Array of relevant hashtags for the post",
             },
             image: {
               type: "string",
@@ -91,22 +91,58 @@ async function generatePostContent(prompt, context = []) {
     ];
 
     const systemPrompt = `You are a social media expert specializing in content creation and platform strategy.
-    Analyze the prompt and determine:
-    1. If it's suitable for creating a social media post
-    2. The most appropriate platform (LinkedIn, Instagram, or Facebook) based on:
-       - Content type and tone
-       - Target audience
-       - Content length and format
-       - Platform-specific best practices
+    IMPORTANT RULES:
+    1. ONLY generate a post (type: "post") when the user EXPLICITLY asks to:
+       - "create a post"
+       - "generate a post"
+       - "make a post"
+       - "write a post"
+       - "need a post"
+    2. For ALL other cases, including:
+       - Questions
+       - General queries
+       - Advice requests
+       - Comments
+       - Discussions
+       - When post generation is not explicitly requested
+       Return type: "response" with a helpful, conversational reply
     
-    Platform Guidelines:
+    Platform Selection Guidelines:
     - LinkedIn: Professional content, business updates, industry insights
     - Instagram: Visual content, lifestyle, creative, shorter captions
     - Facebook: Community-focused, longer content, personal updates
     
-    Always include relevant hashtags for the chosen platform.`;
+    Post Structure Guidelines (ONLY for type: "post"):
+    1. Always use proper formatting:
+       - Line breaks for readability
+       - Emojis strategically placed
+       - Bullet points for lists
+       - Clear sections with headers
+    
+    2. Real Estate Post Structure:
+       - Property title/headline
+       - Key features in bullet points
+       - Location highlights
+       - Price and availability
+       - Contact information
+       - Clear call-to-action
+    
+    3. General Post Structure:
+       - Engaging opening line
+       - Main content with proper spacing
+       - Supporting points or details
+       - Call-to-action or conclusion
+    
+    For type: "response":
+    - Provide helpful, conversational answers
+    - Include relevant information and context
+    - Be professional but friendly
+    - No need for post formatting or hashtags
+    
+    Always include relevant hashtags ONLY for type: "post".`;
 
     // Format context for the conversation
+    console.log(context);
     const contextMessages = context.map((msg) => ({
       role: msg.sender === "user" ? "user" : "assistant",
       content: msg.content,
@@ -141,7 +177,7 @@ async function generatePostContent(prompt, context = []) {
     return {
       type: "response",
       caption: `Error generating content: ${error.message}`,
-      platform: "Facebook",
+      platform: "facebook",
       hashtags: [],
       image: "empty",
       platform_reason: "Default platform due to error",
@@ -158,7 +194,7 @@ app.post("/generate-post", async (req, res) => {
       return res.status(400).json({
         type: "response",
         caption: "Missing required fields",
-        platform: "Facebook",
+        platform: "facebook",
         hashtags: [],
         image: "empty",
         platform_reason: "Default platform due to missing prompt",
@@ -183,7 +219,7 @@ app.post("/generate-post", async (req, res) => {
     res.status(500).json({
       type: "response",
       caption: `Error: ${error.message}`,
-      platform: "Facebook",
+      platform: "facebook",
       hashtags: [],
       image: "empty",
       platform_reason: "Default platform due to error",
@@ -199,7 +235,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({
     type: "response",
     caption: "Internal server error",
-    platform: "Facebook",
+    platform: "facebook",
     hashtags: [],
     image: "empty",
     platform_reason: "Default platform due to server error",
