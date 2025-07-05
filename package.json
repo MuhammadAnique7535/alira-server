@@ -2,10 +2,10 @@
   "name": "social-media-post-generator",
   "version": "1.0.0",
   "description": "Social media post generator API",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
