@@ -1,0 +1,43 @@
+# ========================================
+# ALIRA SERVER - ENVIRONMENT VARIABLES
+# ========================================
+
+# Server Configuration
+PORT=8080
+NODE_ENV=development
+
+# Frontend URL
+FRONTEND_URL=https://localhost:3000
+
+# CORS Origins
+ALLOWED_ORIGINS=https://aliraa.vercel.app,https://localhost:3000,http://localhost:3000,https://alira.vercel.app,http://alira.vercel.app,https://localhost:3001
+
+# Supabase Configuration
+SUPABASE_URL=https://qeyjfzcxpmkyawkdsctx.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFleWpmemN4cG1reWF3a2RzY3R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjk4NTMsImV4cCI6MjA2MjY0NTg1M30.PnRB-9P5L_LCWZqSg89H8C82bWqFq-MJnBmyvPXm2rk
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Facebook API Configuration
+FACEBOOK_APP_ID=1018896506884743
+FACEBOOK_APP_SECRET=f995dafc009d9f3f0cc7b8442c7a44ab
+FACEBOOK_API_VERSION=v19.0
+FACEBOOK_SCOPES=pages_read_engagement,pages_manage_posts,pages_show_list,publish_to_groups
+
+# Instagram API Configuration
+INSTAGRAM_APP_ID=1243765633792492
+INSTAGRAM_APP_SECRET=b12f39c52fdbca2f4d157779bb6df64a
+INSTAGRAM_API_VERSION=v12.0
+INSTAGRAM_SCOPES=instagram_business_basic,instagram_business_content_publish,instagram_business_manage_messages,instagram_business_manage_comments,pages_read_engagement,pages_manage_posts,pages_show_list
+INSTAGRAM_DEFAULT_IMAGE=https://qeyjfzcxpmkyawkdsctx.supabase.co/storage/v1/object/public/alira/1ee840b6-66dc-44ee-8d80-cf52ee7dde82/screenshot-2025-05-19-at-12-22-18-pm-1158.png
+
+# LinkedIn API Configuration
+LINKEDIN_CLIENT_ID=86xsystlfuzqie
+LINKEDIN_CLIENT_SECRET=WPL_AP1.Jw6xkMs84RzFFAMn.qBa3Jw==
+LINKEDIN_API_VERSION=v2
+LINKEDIN_SCOPES=openid profile w_member_social
+
+# Security
+JWT_SECRET=your_jwt_secret_here
+SESSION_SECRET=your_session_secret_here 

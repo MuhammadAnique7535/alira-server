@@ -1,0 +1,142 @@
+# ========================================
+# ALIRA SERVER - ENVIRONMENT VARIABLES
+# ========================================
+# Copy this file to .env and fill in your values
+
+# ========================================
+# SERVER CONFIGURATION
+# ========================================
+PORT=8080
+NODE_ENV=development
+
+# ========================================
+# FRONTEND URL
+# ========================================
+# Your frontend application URL (used for OAuth redirects)
+FRONTEND_URL=https://localhost:3000
+
+# ========================================
+# CORS ALLOWED ORIGINS
+# ========================================
+# Comma-separated list of allowed origins for CORS
+ALLOWED_ORIGINS=https://aliraa.vercel.app,https://localhost:3000,http://localhost:3000,https://alira.vercel.app,http://alira.vercel.app,https://localhost:3001
+
+# ========================================
+# SUPABASE CONFIGURATION
+# ========================================
+# Your Supabase project URL
+SUPABASE_URL=https://qeyjfzcxpmkyawkdsctx.supabase.co
+# Your Supabase anonymous key
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFleWpmemN4cG1reWF3a2RzY3R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjk4NTMsImV4cCI6MjA2MjY0NTg1M30.PnRB-9P5L_LCWZqSg89H8C82bWqFq-MJnBmyvPXm2rk
+
+# ========================================
+# OPENAI CONFIGURATION
+# ========================================
+# Your OpenAI API key
+OPENAI_API_KEY=your_openai_api_key_here
+
+# ========================================
+# FACEBOOK API CONFIGURATION
+# ========================================
+# Your Facebook App ID
+FACEBOOK_APP_ID=1018896506884743
+# Your Facebook App Secret
+FACEBOOK_APP_SECRET=f995dafc009d9f3f0cc7b8442c7a44ab
+# Facebook API version
+FACEBOOK_API_VERSION=v19.0
+# Facebook OAuth scopes (comma-separated)
+FACEBOOK_SCOPES=pages_read_engagement,pages_manage_posts,pages_show_list,publish_to_groups
+
+# ========================================
+# INSTAGRAM API CONFIGURATION
+# ========================================
+# Your Instagram App ID
+INSTAGRAM_APP_ID=1243765633792492
+# Your Instagram App Secret
+INSTAGRAM_APP_SECRET=b12f39c52fdbca2f4d157779bb6df64a
+# Instagram API version
+INSTAGRAM_API_VERSION=v12.0
+# Instagram OAuth scopes (comma-separated)
+INSTAGRAM_SCOPES=instagram_business_basic,instagram_business_content_publish,instagram_business_manage_messages,instagram_business_manage_comments,pages_read_engagement,pages_manage_posts,pages_show_list
+# Default image URL for Instagram posts (when no image is provided)
+INSTAGRAM_DEFAULT_IMAGE=https://qeyjfzcxpmkyawkdsctx.supabase.co/storage/v1/object/public/alira/1ee840b6-66dc-44ee-8d80-cf52ee7dde82/screenshot-2025-05-19-at-12-22-18-pm-1158.png
+
+# ========================================
+# LINKEDIN API CONFIGURATION
+# ========================================
+# Your LinkedIn Client ID
+LINKEDIN_CLIENT_ID=86xsystlfuzqie
+# Your LinkedIn Client Secret
+LINKEDIN_CLIENT_SECRET=WPL_AP1.Jw6xkMs84RzFFAMn.qBa3Jw==
+# LinkedIn API version
+LINKEDIN_API_VERSION=v2
+# LinkedIn OAuth scopes (space-separated)
+LINKEDIN_SCOPES=openid profile w_member_social
+
+# ========================================
+# SECURITY & ENCRYPTION
+# ========================================
+# JWT Secret (generate a random string)
+JWT_SECRET=your_jwt_secret_here
+# Session Secret (generate a random string)
+SESSION_SECRET=your_session_secret_here
+
+# ========================================
+# LOGGING
+# ========================================
+# Log level (debug, info, warn, error)
+LOG_LEVEL=info
+# Enable detailed logging
+DEBUG=false
+
+# ========================================
+# RATE LIMITING
+# ========================================
+# Rate limit window in milliseconds
+RATE_LIMIT_WINDOW=900000
+# Maximum requests per window
+RATE_LIMIT_MAX=100
+
+# ========================================
+# DATABASE (if using external database)
+# ========================================
+# Database URL (if not using Supabase)
+DATABASE_URL=your_database_url_here
+
+# ========================================
+# CACHE CONFIGURATION
+# ========================================
+# Redis URL (if using Redis for caching)
+REDIS_URL=your_redis_url_here
+# Cache TTL in seconds
+CACHE_TTL=3600
+
+# ========================================
+# FILE UPLOAD
+# ========================================
+# Maximum file size in bytes
+MAX_FILE_SIZE=10485760
+# Allowed file types
+ALLOWED_FILE_TYPES=image/jpeg,image/png,image/gif,image/webp
+
+# ========================================
+# WEBHOOKS (if needed)
+# ========================================
+# Webhook secret for verification
+WEBHOOK_SECRET=your_webhook_secret_here
+
+# ========================================
+# MONITORING
+# ========================================
+# Sentry DSN (for error tracking)
+SENTRY_DSN=your_sentry_dsn_here
+# New Relic license key
+NEW_RELIC_LICENSE_KEY=your_new_relic_key_here
+
+# ========================================
+# DEVELOPMENT ONLY
+# ========================================
+# Enable development features
+DEV_MODE=false
+# Mock external APIs
+MOCK_APIS=false 
