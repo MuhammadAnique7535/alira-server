@@ -178,6 +178,7 @@ class InstagramService {
           page_access_token: accessToken,
           page_id: instagramUserId,
           user_id: userId,
+          is_connected: true,
         },
         {
           onConflict: "account_id",

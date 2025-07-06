@@ -272,6 +272,7 @@ class FacebookService {
           access_token: page.access_token,
           picture_url: page.picture?.data?.url || null,
           user_id: userId,
+          is_connected: true,
         },
         {
           onConflict: "page_id",
