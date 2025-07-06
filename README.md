@@ -1,6 +1,6 @@
 # Social Media Post Generator API
 
-A Node.js-based API that generates and schedules social media posts using OpenAI's GPT model and Facebook Graph API.
+A Node.js-based API that generates and schedules social media posts using OpenAI's GPT model and Facebook Graph API
 
 ## Setup
 
