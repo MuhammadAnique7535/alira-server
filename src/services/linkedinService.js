@@ -127,6 +127,7 @@ class LinkedInService {
           profile_picture_url: profilePicture || null,
           access_token: accessToken,
           created_at: new Date().toISOString(),
+          is_connected: true,
         },
         {
           onConflict: "account_id",
