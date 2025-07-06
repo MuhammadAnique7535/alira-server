@@ -17,6 +17,18 @@ class LinkedInService {
 
   // Exchange code for access token
   async exchangeCodeForToken(code) {
+    console.log("[LinkedInService] Exchanging code for access token");
+    console.log("[LinkedInService] Code:", code);
+    console.log("[LinkedInService] LINKEDIN_CLIENT_ID:", LINKEDIN_CLIENT_ID);
+    console.log(
+      "[LinkedInService] LINKEDIN_CLIENT_SECRET:",
+      LINKEDIN_CLIENT_SECRET
+    );
+    console.log(
+      "[LinkedInService] LINKEDIN_REDIRECT_URI:",
+      LINKEDIN_REDIRECT_URI
+    );
+
     const tokenResponse = await axios.post(
       "https://www.linkedin.com/oauth/v2/accessToken",
       new URLSearchParams({
